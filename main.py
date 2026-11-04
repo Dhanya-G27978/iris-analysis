@@ -28,10 +28,16 @@ def dataset_summary(df):
     print(df["species"].value_counts())
 
 
+def average_sepal_length(df):
+    print(
+        "\nAverage Sepal Length:",
+        df["sepal length (cm)"].mean()
+    )
+
 def main():
     df = load_iris_data()
     dataset_summary(df)
-
+    average_sepal_length(df)
 
 if __name__ == "__main__":
     main()
