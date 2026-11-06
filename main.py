@@ -27,10 +27,14 @@ def dataset_summary(df):
     print("\nSpecies Count:")
     print(df["species"].value_counts())
 
+def show_average_measurements(df):
+    print("\nAverage Measurements:")
+    print(df.drop(columns=["species"]).mean())
 
 def main():
     df = load_iris_data()
     dataset_summary(df)
+    show_average_measurements(df)
 
 
 if __name__ == "__main__":
