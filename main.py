@@ -31,11 +31,16 @@ def show_average_measurements(df):
     print("\nAverage Measurements:")
     print(df.drop(columns=["species"]).mean())
 
+def show_maximum_measurements(df):
+    print("\nMaximum Measurements by species:")
+    print(df.groupby("species").max())
+
 def main():
     df = load_iris_data()
     dataset_summary(df)
     show_average_measurements(df)
-
+    show_maximum_measurements(df)
+    
 
 if __name__ == "__main__":
     main()
